@@ -1,0 +1,22 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "bookmarkletifier-icon-48.png",
+      "default_title": "Bookmarkletifier"
+   },
+   "description": "Allows editing bookmarklets",
+   "icons": {
+      "128": "bookmarkletifier-icon-128.png",
+      "16": "bookmarkletifier-icon-16.png",
+      "48": "bookmarkletifier-icon-48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCklFdQL16ZMhAfSCX7K41UWmXVPZF+wLLh5DYdCDaVhRk+JADqBpF6kjZIQB6DwGPPl3pwuGlMaFRoAvDybkgsJdreWvBFMfkqdmU50ZiHN4uMXNUqcWrex2kqjik3srYohGJ/x85wNN0rxRFFmM70gsEynN7tXFy/lT8mXkTarQIDAQAB",
+   "manifest_version": 2,
+   "name": "Bookmarkletifier",
+   "options_page": "bookmarkletifier.html",
+   "permissions": [ "bookmarks" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.1"
+}

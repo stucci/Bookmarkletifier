@@ -1,0 +1,69 @@
+html { height: 100%; }
+body { margin: 0; height: 100%; }
+
+#editors {
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+}
+
+#nice {
+    position: absolute;
+    width: 100%;
+    top: 0; bottom: 40%;
+}
+
+#bookmarkified {
+    position: absolute;
+    width: 100%;
+    top: 60%; bottom: 10%;
+    box-sizing: border-box;
+}
+
+#toolbar {
+    position: absolute;
+    width: 100%;
+    top: 90%; bottom: 0;
+}
+
+#bookmarks {
+    display: none;
+    position: absolute;
+    left: 0; width: 200px;
+    top: 0; bottom: 0;
+    overflow: hidden;
+    cursor: default;
+}
+
+#bookmarks ul {
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#bookmarks li {
+    position: relative;
+    padding-left: 20px;
+}
+#bookmarks li.folder {
+    margin-bottom: 10px;
+}
+#bookmarks li.folder:after,
+#bookmarks li.bookmarklet:after {
+    content: "";
+    position: absolute;
+    left: 2px; top: 1px;
+    width: 16px; height: 16px;
+    background-repeat: no-repeat;
+}
+#bookmarks li.folder:after {
+    background-image: url(assets/icons/folder.gif);
+}
+#bookmarks li.bookmarklet:after {
+    background-image: url(assets/icons/bookmarklet.gif);
+}
+#bookmarks li.bookmarklet.selected {
+    color: white;
+    background: #000080;
+    border-radius: 3px;
+}
