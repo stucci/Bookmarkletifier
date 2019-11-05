@@ -1,5 +1,4 @@
 // Populate bookmarks
-/*
 chrome.bookmarks.getTree(function (bookmarks) {
 
     function getBookmarkletTitle(bookmarklet) {
@@ -43,7 +42,6 @@ chrome.bookmarks.getTree(function (bookmarks) {
 
     $('#bookmarks').append(buildBookmarkList(bookmarks[0].children));
 });
-*/
 
 // TODO: Better code structure
 // TODO: Detect if Chrome's update quota has been reached and edits can no longer be easily saved
@@ -79,7 +77,7 @@ $(function () {
     });
 
     var editor = ace.edit('nice');
-    editor.setTheme("ace/theme/chrome");
+    editor.setTheme("ace/theme/tomorrow_night");
     editor.getSession().setMode("ace/mode/javascript");
 
     bookmarkletClickHandler = function (event) {
@@ -103,10 +101,10 @@ $(function () {
     };
 
     function bookmarkify(source) {
-      return 'javascript:'+escape(jsmin(source).replace(/^\s+|\s+$/, ''));
+      return 'javascript:'+(jsmin(source).replace(/^\s+|\s+$/, ''));
     }
     function unbookmarkify(source) {
-      return js_beautify(unescape(source.replace(/^javascript:/, '')));
+      return js_beautify(decodeURI(source.replace(/^javascript:/, '')));
     }
     
     function updateBookmarklet() {
@@ -131,14 +129,12 @@ $(function () {
         $('#bookmarks li.bookmarklet.selected').each(function () {
             var $li = $(this);
             var bookmark = $li.data('bookmark');
-            /*
             chrome.bookmarks.update(bookmark.id, {
                 title: $('#title')[0].value,
                 url: $('#bookmarkified').get(0).value
             }, function (result) {
                 $li.data('bookmark', result);
             });
-            */
         });
         $('#save').attr('disabled', true);
         return false;
